@@ -4,7 +4,7 @@
 import * as React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { PencilRuler, ChevronLeft, ChevronRight } from "lucide-react";
 
 const facultyMembers = [

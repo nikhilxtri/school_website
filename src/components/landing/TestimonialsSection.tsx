@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, MessageSquare, Heart } from "lucide-react";
 import type { Testimonial } from "@/types";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const TestimonialsSection = () => {

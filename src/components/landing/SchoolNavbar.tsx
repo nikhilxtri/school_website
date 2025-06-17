@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence, color } from "framer-motion";
 import { Menu, X, Award } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 
 export const SchoolNavbar = () => {

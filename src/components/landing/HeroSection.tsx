@@ -4,7 +4,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { PlayCircle, Sparkles, MousePointer2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { BookOpen, Users, Palette, Music2, Lightbulb, Rocket } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { FeatureItem } from "@/types";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export const FeaturesSection = () => {
   const features: FeatureItem[] = [
