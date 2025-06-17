@@ -99,7 +99,7 @@ export const HeroSection = () => {
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6 font-headline">
             Sparking Joy & Curiosity at <br className="sm:hidden"/>
-            <span className="block sm:inline bg-gradient-to-r from-primary to-playful-blue-dark bg-clip-text text-transparent">
+            <span className="block sm:inline bg-gradient-to-r from-primary to-pink-500 bg-clip-text text-transparent drop-shadow-[0px_0px_10px_rgba(0,85,255,0.5)] ">
               London Kids!
             </span>
           </h1>
@@ -107,13 +107,13 @@ export const HeroSection = () => {
             Welcome to a vibrant world of play, learning, and laughter. Our playschool and nursery programs nurture little explorers every step of the way with a sprinkle of doodle magic!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/80 text-primary-foreground px-10 py-3.5 rounded-full text-lg shadow-lg transform hover:scale-105 transition-transform duration-300" asChild>
+            <Button size="lg" className="bg-primary hover:bg-primary/80 text-primary-foreground px-10 py-3.5 rounded-xl text-lg shadow-lg transform hover:scale-105 transition-transform duration-300" asChild>
               <Link href="#about-us" className="flex items-center gap-2.5">
                 <PlayCircle size={22}/>
                 Explore Our World
               </Link>
             </Button>
-            <Button variant="outline" size="lg" className="text-primary-foreground border-primary-foreground/50 hover:bg-primary-foreground/10 hover:text-primary-foreground px-10 py-3.5 rounded-full text-lg shadow-lg transform hover:scale-105 transition-transform duration-300" asChild>
+            <Button variant="outline" size="lg" className="text-primary-foreground bg-primary-foreground/50 border-primary-foreground/50 hover:bg-primary-foreground/10 hover:text-primary-foreground px-10 py-3.5 rounded-xl text-lg shadow-lg transform hover:scale-105 transition-transform duration-300" asChild>
               <Link href="#programs">View Programs</Link>
             </Button>
           </div>
@@ -121,10 +121,10 @@ export const HeroSection = () => {
       </div>
 
       {/* Wavy Border Layer */}
-      <div className="absolute bottom-0 left-0 w-full h-24 md:h-32 z-20"> {/* Increased z-index to be above doodles and image overlay */}
-        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-            <path d="M0 60C240 120 480 0 720 60C960 120 1200 0 1440 60V100H0V60Z" fill="hsl(var(--background))" /> {/* Fills with main page background color */}
-            <path d="M0 65C240 125 480 5 720 65C960 125 1200 5 1440 65" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="6 6" className="opacity-30" />
+      <div className="absolute left-0 right-0 bottom-0 w-full z-20 -mb-1 pointer-events-none">
+        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full scale-x-150">
+          <path d="M0 60C240 120 480 0 720 60C960 120 1200 0 1440 60V100H0V60Z" fill="hsl(var(--secondary))" />
+          <path d="M0 65C240 125 480 5 720 65C960 125 1200 5 1440 65" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="6 6" className="opacity-30" />
         </svg>
       </div>
     </section>

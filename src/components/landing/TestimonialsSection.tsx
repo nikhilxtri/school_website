@@ -21,7 +21,7 @@ export const TestimonialsSection = () => {
       quote: "London Kids is like a second home for my daughter! She's learned so much and made so many friends. The teachers are true superheroes with a knack for doodles!",
       name: "Sarah P.",
       designation: "Parent of a Happy Doodler",
-      src: "https://cdn.pixabay.com/photo/2018/01/15/18/05/adult-3084400_960_720.jpg",
+      src: "https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg",
     },
     {
       quote: "The playschool program is fantastic! My son runs in every morning with a huge smile. We love the creative activities, caring staff, and all the fun drawings.",
@@ -67,7 +67,7 @@ export const TestimonialsSection = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-secondary wavy-border-bottom doodle-background">
+    <section id="testimonials" className="py-10 md:py-28 bg-secondary wavy-border-bottom doodle-background">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -90,28 +90,28 @@ export const TestimonialsSection = () => {
                 animate="center"
                 exit="exit"
                 transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  x: { type: "ease", stiffness: 300, damping: 30 },
                   opacity: { duration: 0.3 },
                 }}
                 className="flex flex-col items-center w-full"
               >
-                <div className="relative w-32 h-32 md:w-36 md:h-36 mb-8">
+                <div className="relative w-64 h-64 md:w-96 md:h-96 mb-2">
                   <Image
                     src={testimonialsData[active].src}
                     alt={testimonialsData[active].name}
-                    width={150}
-                    height={150}
-                    className="rounded-full object-cover shadow-lg border-4 border-primary/20"
+                    width={250}
+                    height={250}
+                    className="rounded-3xl object-cover shadow-lg border-4 border-primary/20"
                     priority={true}
                   />
-                   <Heart className="absolute -bottom-2 -right-2 w-10 h-10 text-primary/70 fill-primary/20 transform rotate-12" />
+                  
                 </div>
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 text-playful-blue-light fill-playful-blue-light" />
+                    <Star key={i} className="w-6 h-6 text-playful-blue-light/10 fill-yellow-300" />
                   ))}
                 </div>
-                <MessageSquare className="w-10 h-10 text-primary/30 mb-5" />
+
                 <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 italic max-w-xl">
                   "{testimonialsData[active].quote}"
                 </p>

@@ -94,8 +94,8 @@ export const Footer = () => {
             {footerLinksData.map((section, index) => (
               <motion.div key={section.label} {...footerAnimation} transition={{ ...footerAnimation.transition, delay: 0.2 + index * 0.06 }}>
                 <div>
-                  <h3 className="pl-12 text-primary font-semibold mb-6 text-lg md:text-xl font-headline">{section.label}</h3>
-                  <ul className="space-y-3.5 pl-12">
+                  <h3 className="pl-2 md:pl-12 text-primary font-bold mb-6 text-base md:text-xl font-headline">{section.label}</h3>
+                  <ul className="space-y-3.5 pl-2 md:pl-12">
                     {section.links.map((link) => (
                       <li key={link.title}>
                         <Link

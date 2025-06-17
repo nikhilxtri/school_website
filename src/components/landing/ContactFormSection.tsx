@@ -15,10 +15,9 @@ import { useToast } from "@/hooks/use-toast";
 import React from "react";
 
 const contactFormSchema = z.object({
-  parentName: z.string().min(2, { message: "Parent's name must be at least 2 characters." }),
+  parentName: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  phone: z.string().min(10, { message: "Please enter a valid phone number (e.g., 10 digits)." }),
-  childAge: z.string().min(1, { message: "Child's age is required (e.g., '3 years')." }),
+  phone: z.string().min(10, { message: "Please enter a valid phone number." }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }).optional(),
 });
 
@@ -59,7 +58,6 @@ export const ContactFormSection = () => {
       parentName: "",
       email: "",
       phone: "",
-      childAge: "",
       message: "",
     },
   });
@@ -127,7 +125,7 @@ export const ContactFormSection = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             <Card className="bg-blue/30 text-background p-2 sm:p-4 md:p-0 rounded-3xl shadow-2xl border-2 border-primary/20">
-              <CardHeader className="p-6 md:p-8 text-center md:text-left">
+              <CardHeader className="p-6 md:p-8 text-center">
                 <CardTitle className="text-2xl md:text-3xl font-headline text-primary">
                   Schedule a Visit
                 </CardTitle>
@@ -140,9 +138,9 @@ export const ContactFormSection = () => {
                       name="parentName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-muted-foreground/80">Parent's Name</FormLabel>
+                          <FormLabel className="text-muted-foreground/80">Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your name" {...field} className="bg-black/5 border-background/20 text-muted-foreground placeholder:text-muted-foreground rounded-xl py-3 px-4 text-base"/>
+                            <Input placeholder="Your name" {...field} className="bg-black/5 border-background/20 text-muted-foreground placeholder:text-muted-foreground/20 rounded-sm py-3 px-4 text-base"/>
                           </FormControl>
                           <FormMessage className="text-primary/70" />
                         </FormItem>
@@ -155,7 +153,7 @@ export const ContactFormSection = () => {
                         <FormItem>
                           <FormLabel className="text-muted-foreground/80">Email Address</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="your@gamil.com" {...field} className="bg-black/5 border-background/20 text-muted-foreground placeholder:text-muted-foreground rounded-xl py-3 px-4 text-base"/>
+                            <Input type="email" placeholder="your@gamil.com" {...field} className="bg-black/5 border-background/20 text-muted-foreground placeholder:text-muted-foreground/20 rounded-sm py-3 px-4 text-base"/>
                           </FormControl>
                           <FormMessage className="text-primary/70" />
                         </FormItem>
@@ -168,20 +166,7 @@ export const ContactFormSection = () => {
                         <FormItem>
                           <FormLabel className="text-muted-foreground/80">Phone Number</FormLabel>
                           <FormControl>
-                            <Input type="tel" placeholder="(+91) 1234567890" {...field} className="bg-black/5 border-background/20 text-muted-foreground placeholder:text-muted-foreground rounded-xl py-3 px-4 text-base"/>
-                          </FormControl>
-                          <FormMessage className="text-primary/70" />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="childAge"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-muted-foreground/80">Child's Age</FormLabel>
-                          <FormControl>
-                            <Input placeholder="E.g., 3 years" {...field} className="bg-black/5 border-background/20 text-muted-foreground placeholder:text-muted-foreground rounded-xl py-3 px-4 text-base"/>
+                            <Input type="tel" placeholder="1234567890" {...field} className="bg-black/5 border-background/20 text-muted-foreground placeholder:text-muted-foreground/20 rounded-sm py-3 px-4 text-base"/>
                           </FormControl>
                           <FormMessage className="text-primary/70" />
                         </FormItem>
@@ -192,9 +177,9 @@ export const ContactFormSection = () => {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-muted-foreground/80">Message (Optional)</FormLabel>
+                          <FormLabel className="text-muted-foreground/80">Message</FormLabel>
                           <FormControl>
-                            <Textarea placeholder="Any specific questions or preferred tour times?" {...field} rows={4} className="bg-black/5 border-background/20 text-muted-foreground placeholder:text-muted-foreground rounded-xl py-3 px-4 text-base"/>
+                            <Textarea placeholder="Any specific questions or preferred tour times?" {...field} rows={3} className="bg-black/5 border-background/20 text-muted-foreground placeholder:text-muted-foreground/20 rounded-sm py-3 px-4 text-base"/>
                           </FormControl>
                           <FormMessage className="text-primary/70" />
                         </FormItem>

@@ -10,15 +10,17 @@ import { FacultyDirectorySection } from "@/components/landing/FacultyDirectorySe
 import { ProgramsOverviewSection } from "@/components/landing/ProgramsOverviewSection";
 import { ContactFormSection } from "@/components/landing/ContactFormSection";
 import { AboutUsSection } from "@/components/landing/AboutUsSection";
+import  ImageCarousel  from "@/components/landing/CoverflowCarousel";
 
 
 export default function SchoolLandingPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="mx-auto min-w-screen min-h-screen bg-background text-foreground flex flex-col">
       <SchoolNavbar />
       <main className="flex-grow">
         <HeroSection />
         <AboutUsSection />
+        
         <FeaturesSection />
         <ProgramsOverviewSection />
         <FacultyDirectorySection />

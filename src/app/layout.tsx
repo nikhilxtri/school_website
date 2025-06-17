@@ -11,6 +11,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'London Kids - Playschool & Nursery',
   description: 'Nurturing curious minds at London Kids Playschool and Nursery. A world of joyful learning and discovery for your little ones.',
+  icons :{
+    icon: '/londonkidslogodesktop.png'
+  }
 };
 
 export default function RootLayout({
