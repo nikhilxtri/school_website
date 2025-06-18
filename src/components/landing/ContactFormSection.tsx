@@ -75,7 +75,14 @@ export const ContactFormSection = () => {
   };
 
   return (
-    <section id="admissions" className="py-20 md:py-28 bg-secondary doodle-background">
+    <section id="admissions" className="py-20 md:py-28 bg-background doodle-background">
+      {/* Wavy Border Layer */}
+      <div className="relative left-0 right-0 bottom-0 -mt-1.5 md:-mt-20 -top-20 md:-top-14 w-full z-20 -mb-1 pointer-events-none">
+        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full -scale-y-100">
+          <path d="M0 60C240 120 480 0 720 60C960 120 1200 0 1440 60V100H0V60Z" fill="hsl(var(--secondary))" />
+          <path d="M0 65C240 125 480 5 720 65C960 125 1200 5 1440 65" stroke="hsl(var(--primary))" strokeWidth="4" strokeDasharray="6 6" className="opacity-30" />
+        </svg>
+      </div>
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -91,14 +98,14 @@ export const ContactFormSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-20 md:gap-25 items-center">
+        <div className="md:px-32 grid md:grid-cols-2 gap-20 md:gap-25 items-center">
           {/* Left Column: Contact Details */}
           <motion.div
             initial={{ opacity: 0, x: -25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-8 py-8 px-8 md:py-20 md:pl-20 bg-card shadow-2xl rounded-3xl border-2 border-primary/20"
           >
             {contactDetails.map((item) => (
               <div key={item.label} className="flex items-start gap-4">
@@ -108,9 +115,9 @@ export const ContactFormSection = () => {
                 <div>
                   <h4 className="text-lg font-semibold text-foreground mb-0.5">{item.label}</h4>
                   {item.href ? (
-                    <a href={item.href} className="text-muted-foreground hover:text-primary transition-colors">{item.value}</a>
+                    <a href={item.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">{item.value}</a>
                   ) : (
-                    <p className="text-muted-foreground">{item.value}</p>
+                    <p className="text-sm text-muted-foreground">{item.value}</p>
                   )}
                 </div>
               </div>

@@ -7,14 +7,21 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 
 const programs = [
-  { name: "Tiny Tots Playschool", age: "1.5 - 2.5 Yrs", description: "A world of wonder! We focus on joyful play, making friends, and first steps in learning, all with a doodle twist.", icon: Baby, link: "#playschool", color: "bg-playful-blue-light/15", iconColor: "text-playful-blue-light" },
+  { name: "Tiny Tots Playschool", age: "1.5 - 2.5 Yrs", description: "A world of wonder! We focus on joyful play, making friends, and first steps in learning, all with a doodle twist.", icon: Baby, link: "#playschool", color: "bg-primary/15", iconColor: "text-primary" },
   { name: "Little Sprouts Nursery", age: "2.5 - 3.5 Yrs", description: "Nurturing young minds with creative activities, gentle guidance, and lots of fun in a safe, doodle-filled space.", icon: Sun, link: "#nursery", color: "bg-primary/15", iconColor: "text-primary" },
-  { name: "FunZone Daycare", age: "All Day Fun!", description: "A happy and engaging daycare experience, filled with stories, games, and creative play for busy bees and little artists.", icon: Activity, link: "#daycare", color: "bg-playful-blue-dark/15", iconColor: "text-playful-blue-dark" },
+  { name: "FunZone Daycare", age: "All Day Fun!", description: "A happy and engaging daycare experience, filled with stories, games, and creative play for busy bees and little artists.", icon: Activity, link: "#daycare", color: "bg-primary/15", iconColor: "text-primary" },
 ];
 
 export const ProgramsOverviewSection = () => {
   return (
-    <section id="programs" className="py-20 md:py-28 bg-secondary wavy-border-bottom doodle-background">
+    <section id="programs" className="py-20 md:py-28 bg-secondary doodle-background">
+      {/* Wavy Border Layer */}
+      <div className="relative left-0 right-0 bottom-0 -mt-2 md:-mt-32 -top-24 w-full z-20 -mb-1 pointer-events-none">
+        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <path d="M0 60C240 120 480 0 720 60C960 120 1200 0 1440 60V100H0V60Z" fill="hsl(var(--secondary))" />
+          <path d="M0 65C240 125 480 5 720 65C960 125 1200 5 1440 65" stroke="hsl(var(--primary))" strokeWidth="4" strokeDasharray="6 6" className="opacity-30" />
+        </svg>
+      </div>
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}

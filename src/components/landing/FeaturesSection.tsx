@@ -41,7 +41,14 @@ export const FeaturesSection = () => {
 
   return (
     <section id="about" className="py-20 md:py-28 bg-background relative doodle-background">
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+      {/* Wavy Border Layer */}
+      <div className="relative left-0 right-0 bottom-20 md:bottom-32 w-full z-20 -mb-1 pointer-events-none">
+        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full -scale-y-100">
+          <path d="M0 60C240 120 480 0 720 60C960 120 1200 0 1440 60V100H0V60Z" fill="hsl(var(--secondary))" />
+          <path d="M0 65C240 125 480 5 720 65C960 125 1200 5 1440 65" stroke="hsl(var(--primary))" strokeWidth="4" strokeDasharray="6 6" className="opacity-30" />
+        </svg>
+      </div>
+      <div className="container bottom-10 mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -122,9 +122,9 @@ export const HeroSection = () => {
 
       {/* Wavy Border Layer */}
       <div className="absolute left-0 right-0 bottom-0 w-full z-20 -mb-1 pointer-events-none">
-        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full scale-x-150">
+        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
           <path d="M0 60C240 120 480 0 720 60C960 120 1200 0 1440 60V100H0V60Z" fill="hsl(var(--secondary))" />
-          <path d="M0 65C240 125 480 5 720 65C960 125 1200 5 1440 65" stroke="hsl(var(--primary))" strokeWidth="2" strokeDasharray="6 6" className="opacity-30" />
+          <path d="M0 65C240 125 480 5 720 65C960 125 1200 5 1440 65" stroke="hsl(var(--primary))" strokeWidth="4" strokeDasharray="6 6" className="opacity-30" />
         </svg>
       </div>
     </section>

@@ -8,12 +8,12 @@ import Image from "next/legacy/image";
 import { PencilRuler, ChevronLeft, ChevronRight } from "lucide-react";
 
 const facultyMembers = [
-  { name: "Ms. Daisy Doodles", title: "Head of Happy Learning & Chief Doodler", imgSrc: "https://placehold.co/300x300.png", hint: "woman teacher cartoon doodle style" },
-  { name: "Mr. Leo Adventure", title: "Lead Play Explorer & Story Weaver", imgSrc: "https://placehold.co/300x300.png", hint: "man teacher friendly doodle illustration" },
-  { name: "Ms. Rosie Rainbow", title: "Creative Arts Sparkler & Paint Pot Pro", imgSrc: "https://placehold.co/300x300.png", hint: "woman artist playful doodle character" },
-  { name: "Mrs. Lily Lullaby", title: "Nursery Nurturer & Comfort Creator", imgSrc: "https://placehold.co/300x300.png", hint: "woman educator kind doodle art" },
-  { name: "Mr. Barnaby Blocks", title: "Play & Build Guide & Tower Architect", imgSrc: "https://placehold.co/300x300.png", hint: "man friendly energetic doodle style builder" },
-  { name: "Ms. Sunny Stories", title: "Daycare Storyteller & Imagination Igniter", imgSrc: "https://placehold.co/300x300.png", hint: "woman animated storyteller doodle character" },
+  { name: "Ms. Daisy Doodles", title: "Head of Happy Learning & Chief Doodler", imgSrc: "https://cdn.pixabay.com/photo/2025/04/24/05/23/woman-9554464_1280.jpg", hint: "woman teacher cartoon doodle style" },
+  { name: "Mr. Leo Adventure", title: "Lead Play Explorer & Story Weaver", imgSrc: "https://cdn.pixabay.com/photo/2022/02/04/12/49/woman-6992691_1280.jpg", hint: "man teacher friendly doodle illustration" },
+  { name: "Ms. Rosie Rainbow", title: "Creative Arts Sparkler & Paint Pot Pro", imgSrc: "https://cdn.pixabay.com/photo/2021/02/02/02/34/cafe-5972490_1280.jpg", hint: "woman artist playful doodle character" },
+  { name: "Mrs. Lily Lullaby", title: "Nursery Nurturer & Comfort Creator", imgSrc: "https://cdn.pixabay.com/photo/2017/09/21/13/32/girl-2771936_1280.jpg", hint: "woman educator kind doodle art" },
+  { name: "Mr. Barnaby Blocks", title: "Play & Build Guide & Tower Architect", imgSrc: "https://cdn.pixabay.com/photo/2022/10/07/08/23/girl-7504499_1280.jpg", hint: "man friendly energetic doodle style builder" },
+  { name: "Ms. Sunny Stories", title: "Daycare Storyteller & Imagination Igniter", imgSrc: "https://cdn.pixabay.com/photo/2016/02/23/04/52/model-1216916_1280.jpg", hint: "woman animated storyteller doodle character" },
 ];
 
 const NUM_VISIBLE_CARDS = 3;
@@ -73,7 +73,14 @@ export const FacultyDirectorySection = () => {
 
   return (
     <section id="faculty" className="py-20 md:py-28 bg-background doodle-background">
-      <div className="container mx-auto px-4 sm:px-6">
+      {/* Wavy Border Layer */}
+      <div className="relative left-0 right-0 bottom-0 -mt-1.5 md:-mt-20 -top-20 md:-top-14 w-full z-20 -mb-1 pointer-events-none">
+        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full -scale-y-100">
+          <path d="M0 60C240 120 480 0 720 60C960 120 1200 0 1440 60V100H0V60Z" fill="hsl(var(--secondary))" />
+          <path d="M0 65C240 125 480 5 720 65C960 125 1200 5 1440 65" stroke="hsl(var(--primary))" strokeWidth="4" strokeDasharray="6 6" className="opacity-30" />
+        </svg>
+      </div>
+      <div className="container -my-4 mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +98,7 @@ export const FacultyDirectorySection = () => {
           </p>
         </motion.div>
 
-        <div className="relative max-w-6xl mx-auto mt-10 overflow-hidden">
+        <div className="relative max-w-9xl rounded-3xl mt-10 overflow-hidden">
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
               key={activeIndex} 
@@ -101,10 +108,10 @@ export const FacultyDirectorySection = () => {
               animate="center"
               exit="exit"
               transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
+                x: { type: "ease"},
                 opacity: { duration: 0.3 }
               }}
-              className="flex gap-6 justify-center" 
+              className="flex gap-2 justify-center" 
             >
               {facultyToShow.map((member, i) => (
                 <div key={`${member.name}-${activeIndex}-${i}`} className="w-full sm:w-1/2 md:w-1/3 flex-shrink-0"> 
@@ -138,17 +145,17 @@ export const FacultyDirectorySection = () => {
             <>
               <button
                 onClick={handlePrev}
-                className="absolute top-1/2 -translate-y-1/2 left-2 md:left-0 z-10 bg-primary/70 hover:bg-primary text-primary-foreground p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
+                className="absolute top-1/2 -translate-y-1/2 left-2 md:left-6 z-10 bg-primary/0 text-primary-foreground p-3 rounded-full transition-all duration-300 transform scale-125 hover:scale-150"
                 aria-label="Previous member group"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft strokeWidth={4} className="w-6 h-32" />
               </button>
               <button
                 onClick={handleNext}
-                className="absolute top-1/2 -translate-y-1/2 right-2 md:right-0 z-10 bg-primary/70 hover:bg-primary text-primary-foreground p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
+                className="absolute top-1/2 -translate-y-1/2 right-2 md:right-6 z-10 bg-primary/0 text-primary-foreground p-3 rounded-full transition-all duration-300 transform scale-125 hover:scale-150"
                 aria-label="Next member group"
               >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight strokeWidth={4} className="w-6 h-32" />
               </button>
             </>
           )}

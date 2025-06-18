@@ -20,7 +20,6 @@ export default function SchoolLandingPage() {
       <main className="flex-grow">
         <HeroSection />
         <AboutUsSection />
-        <ImageCarousel/>
         <FeaturesSection />
         <ProgramsOverviewSection />
         <FacultyDirectorySection />

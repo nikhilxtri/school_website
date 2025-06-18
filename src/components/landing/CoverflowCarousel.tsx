@@ -34,8 +34,8 @@ export default function ImageCarousel() {
 
   return (
     <>
-    <h2 className="text-4xl bg-black mx-auto md:text-5xl font-bold text-primary mb-5 font-headline">Gallery</h2>
-      <div className="relative">
+    <h2 className="text-4xl bg-black  md:text-5xl font-bold text-primary mb-5 font-headline">Gallery</h2>
+      <div className="flex">
         <div ref={sliderRef} className="keen-slider rounded-2xl overflow-hidden" style={{height:100}}>
             {images.map((src, idx) => (
             <div className="keen-slider__slide flex items-center justify-center" key={idx}>
